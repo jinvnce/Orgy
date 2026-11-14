@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Business Organization Name</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div id="bar"></div>
+<header class="top">
+  <div class="logo logo-umak"><!-- <img src="../assets/umak-logo.png" alt="UMak logo"> --><span>UMak<br>Logo</span></div>
+  <div class="title">
+    <h1>Business Organization Name</h1>
+    <p>Organizational Communication – 11 ACSAD</p>
+    <ul class="members"><li>Name 1</li><li>Name 2</li><li>Name 3</li><li>Name 4</li><li>Name 5</li></ul>
+  </div>
+  <div class="logo logo-own"><!-- <img src="../assets/own-logo.png" alt="Company logo"> --><span>ABCDE</span></div>
+</header>
+<div class="layout">
+  <nav class="side" aria-label="Main">
+    <a class="nav" href="main.html" data-ic="home">Home</a>
+    <a class="nav" href="frameworks.html" data-ic="landmark">Frameworks</a>
+    <a class="nav" href="structure.html" data-ic="network">Structure</a>
+    <a class="nav active" aria-current="page" href="about.html" data-ic="building">About</a>
+    <a class="nav" href="theory.html" data-ic="book">Theory</a>
+    <a class="nav" href="reflection.html" data-ic="lightbulb">Reflection</a>
+    <a class="nav" href="commitment.html" data-ic="heart">Commitment</a>
+  </nav>
+  <main>
+    <section>
+      <h2 data-ic="building">About the Company</h2>
+      <p class="lead-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit laoreet nibh. Fusce convallis metus id felis luctus adipiscing. We follow Herzberg's Two-Factor Theory.</p>
+      <div class="grid">
+        <div class="card rv"><h3 data-ic="pin">Address</h3><p>123 Placeholder Street, Makati City, Metro Manila</p></div>
+        <div class="card rv"><h3 data-ic="mail">Email</h3><p>hello@businessname.example</p></div>
+        <div class="card rv"><h3 data-ic="star">Framework</h3><p>Two-Factor Theory (Frederick Herzberg)</p></div>
+      </div>
+    </section>
+    <section>
+      <h2 data-ic="network">Who We Are</h2>
+      <p class="lead-txt">Pick a member to read their profile below.</p>
+      <div id="chart"></div>
+    </section>
+    <section>
+      <h2 data-ic="user">Member Profile</h2>
+      <div class="profile" id="profile"></div>
+    </section>
+  </main>
+</div>
+<footer class="foot">© Business Organization Name · Organizational Communication – 11 ACSAD</footer>
+<script src="../script.js"></script>
+</body>
+</html>
