@@ -1,25 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reflection | Business Organization Name</title>
-<link rel="stylesheet" href="../style.css">
-</head>
-<body>
-<div id="bar"></div>
-<header class="top" id="site-header"></header>
-<div class="layout">
-  <main>
-    <section>
-      <h2 data-ic="lightbulb">Reflection</h2>
-      <h3>Why this subject matters</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio praesent libero. Sed cursus ante dapibus diam. Sed nisi nulla quis sem at nibh elementum imperdiet.</p>
-      <p>Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa vestibulum lacinia arcu eget nulla.</p>
-    </section>
-  </main>
-</div>
-<footer class="foot" id="site-footer"></footer>
-<script src="../script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reflection | Business Organization Name</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="bar"></div>
+    <header class="top" id="site-header"></header>
+    <div class="layout">
+      <main>
+        <section aria-labelledby="why-title">
+          <h2 id="why-title" data-ic="lightbulb">Reflection</h2>
+
+          <div class="lead-box">
+            <p>Organizations run on everyday conversations, not just org charts.</p>
+            <p>Organizational Communication shows how people coordinate work, handle power, and make decisions in a group. It treats communication as more than sending a message from sender to receiver.</p>
+            <p>Understanding these dynamics helps us find bottlenecks, build psychological safety, and shape a healthier workplace culture on purpose.</p>
+          </div>
+
+          <div class="grid">
+            <article class="card rv">
+              <span class="badge" data-ic="network"></span>
+              <h3>Formal hierarchies</h3>
+              <p>Clear roles and chains of command decide who coordinates with whom.</p>
+            </article>
+            <article class="card rv">
+              <span class="badge" data-ic="users"></span>
+              <h3>Informal networks</h3>
+              <p>Everyday talk and shared habits decide whether a team stays aligned or stalls.</p>
+            </article>
+            <article class="card rv">
+              <span class="badge" data-ic="shield"></span>
+              <h3>Interpersonal trust</h3>
+              <p>Trust and safety let members speak up, share ideas, and fix problems early.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2 data-ic="users">Member Reflections</h2>
+          <div class="refl-list" id="reflections"></div>
+        </section>
+      </main>
+    </div>
+    <footer class="foot" id="site-footer"></footer>
+    <script src="../script.js"></script>
+  </body>
 </html>

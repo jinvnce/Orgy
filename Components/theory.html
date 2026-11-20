@@ -11,16 +11,63 @@
 <header class="top" id="site-header"></header>
 <div class="layout">
   <main>
-    <section>
-      <h2 data-ic="book">Our Theory and Theorist</h2>
+    <!-- 1. The theory and its theorist -->
+    <section aria-labelledby="theory-title">
+      <h2 id="theory-title" data-ic="book">Our Theory and Theorist</h2>
+      <div class="theory-head">
+        <div class="theory-facts">
+          <span class="chip" data-ic="user">Frederick Herzberg</span>
+          <span class="chip" data-ic="book">Motivation-Hygiene Theory</span>
+          <span class="chip" data-ic="scale">Two separate scales</span>
+        </div>
+        <h3>Two-Factor Theory</h3>
+      </div>
       <div class="theory">
         <figure><div class="photo"><span>Photo of<br>Frederick Herzberg</span><img src="../assets/herz.png" alt="Frederick Herzberg" onerror="this.remove()"></div><figcaption>Frederick Herzberg</figcaption></figure>
-        <div>
-          <h3>Two-Factor Theory</h3>
-          <p>Herzberg proposed that job satisfaction and dissatisfaction are caused by different things. Motivators such as achievement, recognition and growth make people satisfied. Hygiene factors such as pay, policies and working conditions only stop people from being unhappy.</p>
-          <h3>Why we chose it</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our small team needs both fair conditions and meaningful work. Duis aute irure dolor in reprehenderit.</p>
+        <div class="lead-box">
+          <p>Frederick Herzberg was an American psychologist who studied what makes people feel good or bad about their jobs. His Two-Factor Theory, also called the Motivation-Hygiene Theory, came out of that research.</p>
+          <p>Herzberg proposed that job satisfaction and dissatisfaction are caused by different things. They are not opposite ends of one scale.</p>
+          <p>Motivators such as achievement, recognition and growth make people satisfied. Hygiene factors such as pay, policies and working conditions only stop people from being unhappy.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- 2. The two factors -->
+    <section aria-labelledby="factors-title">
+      <h2 id="factors-title" data-ic="scale">The Two Factors</h2>
+      <div class="grid">
+        <article class="card rv">
+          <span class="badge" data-ic="star"></span>
+          <h3>Motivators</h3>
+          <small>They lift people up</small>
+          <p>Achievement, recognition, meaningful work, responsibility and room to grow. When these are present, people feel satisfied and want to do their best work.</p>
+          <div class="track" role="img" aria-label="Motivators scale: from no satisfaction to satisfaction">
+            <div class="stop"><i></i><span>No satisfaction</span></div>
+            <div class="line"></div>
+            <div class="stop on"><i></i><span>Satisfaction</span></div>
+          </div>
+        </article>
+        <article class="card rv">
+          <span class="badge" data-ic="shield"></span>
+          <h3>Hygiene factors</h3>
+          <small>They prevent unhappiness</small>
+          <p>Pay, company policies, working conditions and fair treatment. When these are missing, people become dissatisfied. Having them only removes that problem and does not motivate by itself.</p>
+          <div class="track" role="img" aria-label="Hygiene scale: from dissatisfaction to no dissatisfaction">
+            <div class="stop"><i></i><span>Dissatisfaction</span></div>
+            <div class="line"></div>
+            <div class="stop on"><i></i><span>No dissatisfaction</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Why we chose it -->
+    <section aria-labelledby="why-title">
+      <h2 id="why-title" data-ic="lightbulb">Why We Chose It</h2>
+      <div class="lead-box">
+        <p>Our team needs both fair working conditions and genuinely meaningful work to thrive.</p>
+        <p>Herzberg’s Two-Factor Theory reminds us that clear policies and fair pay prevent dissatisfaction. Open recognition, trust, and opportunities for growth are what truly motivate people to do their best work.</p>
+        <p>Using both sides together helps us keep the group running smoothly while keeping every member inspired.</p>
       </div>
     </section>
   </main>
