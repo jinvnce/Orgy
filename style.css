@@ -1563,3 +1563,15 @@ body {
   margin-top: auto;
   flex-shrink: 0;
 }
+
+/* Long dashed "microtext" line under the course title: spans the full header width */
+.title {
+  min-width: 0;
+  overflow: hidden;
+}
+.top .members {
+  width: calc(100% / 0.18);
+  margin: 12px 0 -8px;
+  transform-origin: left top;
+  justify-content: center;
+}
