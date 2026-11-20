@@ -1575,3 +1575,116 @@ body {
   transform-origin: left top;
   justify-content: center;
 }
+
+/* Remove blue text: intro lines use the theme ink color */
+.lead-txt {
+  color: var(--ink);
+}
+
+/* Structure chart: hover tooltips must not be clipped */
+#chart {
+  overflow: visible;
+  padding: 64px 16px;
+}
+.node:hover,
+.node:focus-visible {
+  z-index: 20;
+}
+.tip {
+  z-index: 30;
+}
+
+/* ===== Readable text blocks ===== */
+/* Intro lines under headings: centered column that actually sits in the middle
+   (the old .lead-txt margin was overriding "main p" auto margins). */
+main .lead-txt {
+  max-width: 62ch;
+  margin: 4px auto 28px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Long intro text: a card with an accent bar, left-aligned and split into short paragraphs */
+.lead-box {
+  max-width: 760px;
+  margin: 8px auto 32px;
+  padding: 26px 30px;
+  background: var(--card);
+  border: 1px solid var(--navy);
+  border-left: 6px solid var(--navy);
+  box-shadow: 6px 6px 0 var(--line);
+  text-align: left;
+}
+.lead-box p {
+  max-width: none;
+  margin: 0 0 14px;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+.lead-box p:first-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.lead-box p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 760px) {
+  .lead-box {
+    padding: 18px 18px;
+  }
+}
+
+/* About: text card and the 3 info cards share one width so their edges line up */
+.lead-box,
+.lead-box + .grid {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Profile quote mark: always visible, even on top of a dark photo */
+.q {
+  top: -14px;
+  left: -14px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+.q .i {
+  width: 28px;
+  height: 28px;
+}
+
+/* Sidebar icons: every link uses the same theme color (Theory was still orange) */
+.nav:nth-child(n) {
+  --c: var(--navy);
+}
+
+/* Theorist photo (assets/herz.png): fills the 3:4 frame; falls back to the dashed placeholder if the file is missing */
+.photo {
+  position: relative;
+  overflow: hidden;
+}
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.photo:has(img) {
+  border: 5px solid var(--gold);
+  box-shadow: 8px 8px 0 var(--navy);
+  background: var(--bg);
+}
+.theory figcaption {
+  margin-top: 18px;
+}

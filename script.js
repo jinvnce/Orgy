@@ -173,10 +173,21 @@ function profile(k) {
   p.classList.add("in");
   document.querySelectorAll(".node").forEach((n) => n.classList.toggle("sel", +n.dataset.k === k));
   try {
-    history.replaceState(null, "", "?m=" + k + "#profile");
+    history.replaceState(null, "", "?m=" + k);
   } catch (e) {}
 }
-if ($("#profile")) profile(Math.min(M.length - 1, +new URLSearchParams(location.search).get("m") || 0));
+if ($("#profile")) {
+  const wantsProfile = location.hash === "#profile"; // read before profile() rewrites the URL
+  profile(Math.min(M.length - 1, +new URLSearchParams(location.search).get("m") || 0));
+  // Only jump to the profile when the link asked for it (#profile, e.g. from the
+  // Structure chart or team cards). A normal visit to About starts at the top.
+  if (wantsProfile)
+    requestAnimationFrame(() => $("#profile").scrollIntoView({ block: "center" }));
+  else {
+    history.scrollRestoration = "manual";
+    scrollTo(0, 0);
+  }
+}
 
 document.querySelectorAll("[data-ic2]").forEach((e) => e.insertAdjacentHTML("beforeend", ic("arrow")));
 document.querySelectorAll("[data-ic]").forEach((e) => e.insertAdjacentHTML("afterbegin", ic(e.dataset.ic)));
