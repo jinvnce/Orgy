@@ -123,6 +123,22 @@ const SITE = {
     layout.prepend(nav);
   }
 
+  const setHdr = () =>
+    head &&
+    document.documentElement.style.setProperty(
+      "--hdr",
+      head.offsetHeight + "px",
+    );
+  const setFtr = () =>
+    document.getElementById("site-footer") &&
+    document.documentElement.style.setProperty(
+      "--ftr",
+      document.getElementById("site-footer").offsetHeight + "px",
+    );
+  setHdr();
+  addEventListener("resize", () => (setHdr(), setFtr()));
+  addEventListener("load", () => (setHdr(), setFtr()));
+
   const foot = document.getElementById("site-footer");
   if (foot) foot.innerHTML = `© ${SITE.name} · Organizational Communication – II ACSAD`;
 })();
