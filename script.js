@@ -153,6 +153,61 @@ const pic = (m, k) =>
     ? `<img src="../assets/${m.photo}" alt="${m.n}">`
     : `<span class="av">${k + 1}</span>`;
 
+
+/* ===== GLOBAL LAYOUT: header (logos), sidebar nav, footer =====
+   Edit these once and every page updates. */
+const SITE = {
+  name: "Business Organization Name",
+  course: "Organizational Communication - II - ACSAD",
+  members: [
+    "BUGARIN, JOHN VINCENT",
+    "FAUSTINO, ANGELO LOUIS",
+    "LULU, JOBELYN",
+    "URMENITA, MOEBIUS ZETH",
+    "VALDEZ, NHED JHYRO",
+  ],
+  nav: [
+    ["main.html", "home", "Home"],
+    ["frameworks.html", "landmark", "Frameworks"],
+    ["structure.html", "network", "Structure"],
+    ["about.html", "building", "About"],
+    ["theory.html", "book", "Theory"],
+    ["reflection.html", "lightbulb", "Reflection"],
+    ["commitment.html", "heart", "Commitment"],
+  ],
+};
+(function buildLayout() {
+  const page = location.pathname.split("/").pop() || "main.html";
+
+  const head = document.getElementById("site-header");
+  if (head)
+    head.innerHTML = `<div class="logo logo-umak"><img src="../assets/umak-logo.png" alt="UMak logo"></div>
+      <div class="title">
+        <h1>${SITE.name}</h1>
+        <p>${SITE.course}</p>
+        <ul class="members">${SITE.members.map((n) => `<li>${n}</li>`).join("")}</ul>
+      </div>
+      <div class="logo logo-own"><img src="../assets/logo.png" alt="Company logo"></div>`;
+
+  const layout = document.querySelector(".layout");
+  if (layout) {
+    const nav = document.createElement("nav");
+    nav.className = "side";
+    nav.setAttribute("aria-label", "Main");
+    nav.innerHTML = SITE.nav
+      .map(
+        ([href, icon, label]) =>
+          `<a class="nav${href === page ? " active" : ""}"${href === page ? ' aria-current="page"' : ""} href="${href}" data-ic="${icon}">${label}</a>`,
+      )
+      .join("");
+    layout.prepend(nav);
+  }
+
+  const foot = document.getElementById("site-footer");
+  if (foot)
+    foot.innerHTML = `© ${SITE.name} · Organizational Communication – II ACSAD`;
+})();
+
 if ($("#fw"))
   $("#fw").innerHTML = F.map(
     (f) =>
@@ -239,6 +294,3 @@ addEventListener(
   { passive: true },
 );
 
-document
-  .querySelectorAll(".members")
-  .forEach((u) => (u.innerHTML = M.map((m) => `<li>${m.n}</li>`).join("")));
