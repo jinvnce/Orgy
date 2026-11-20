@@ -1563,3 +1563,23 @@ body {
   margin-top: auto;
   flex-shrink: 0;
 }
+
+/* Member reflections: stack of profile-style cards (reflection.html) */
+.refl-list {
+  display: grid;
+  gap: 44px;
+}
+.profile.refl {
+  scroll-margin-top: calc(var(--hdr, 80px) + 16px);
+  align-items: stretch; /* reflection text runs the full height of the card */
+}
+.profile.refl .info h2 {
+  margin-top: 0;
+}
+.profile.refl .info p {
+  margin: 0 0 14px;
+  line-height: 1.7;
+}
+.profile.refl.rv.show:hover {
+  transform: none; /* big cards should not lift on hover like the small ones */
+}

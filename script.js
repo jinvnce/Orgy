@@ -7,6 +7,7 @@ const M = [
     mail: "jvbugarin@fluvb.ph",
     bio: " I’m John Vincent, the one guiding FLUVB toward its goals. Together with my four teammates, I lead our ideas, encourage innovation, and keep our shared vision moving forward..",
     duty: ["Sets the vision and direction", "Leads all team meetings", "Approves major decisions"],
+    refl: "Through working on group projects, I have learned that organizational culture is far more than a mission statement written at the start—it is the operating system that quietly governs how decisions are made, how tasks are prioritized, and how people treat one another under pressure. Looking through Schein’s Three-Level Model, it is easy for a team to focus only on visible artifacts like logos, slide templates, or stated values while overlooking the unspoken assumptions that actually drive daily behavior. In my role as leader, I have seen how silence in a group chat or vague updates quickly breed uncertainty and second-guessing. Practicing transparent, two-way communication—listening actively and setting clear expectations rather than simply issuing directives—eliminates guesswork, builds mutual trust, and keeps the entire team aligned.",
   },
   {
     n: "Angelo Louis Faustino",
@@ -16,6 +17,7 @@ const M = [
     mail: "alfaustino@fluvb.ph",
     bio: " I’m Angelo, responsible for making sure our operations run smoothly. My goal is to provide reliable comfort and create a refreshing environment that you can enjoy throughout the day.",
     duty: ["Plans daily work", "Tracks deadlines", "Reports progress to the leader"],
+    refl: "Stepping into a group environment makes you acutely aware of how unwritten norms shape daily work long before anyone reads a formal set of rules. You quickly observe which behaviors get praised, which get ignored, and which get quietly shut down. Learning about Cooke’s Behavioral Culture Styles really resonated with me because it explains how teams either develop constructive habits centered on collaboration and growth, or slip into passive rule-following where members simply wait to be told what to do—or worse, aggressive win-lose dynamics that drain morale. Through this, I realized that I am not a passive bystander; every team member is an active culture carrier. The way we communicate, offer support, and follow through on everyday tasks directly shapes the group's energy and operational reliability.",
   },
   {
     n: "Moebius Zeth Urmenita",
@@ -25,6 +27,7 @@ const M = [
     mail: "mzurmenita@fluvb.ph",
     bio: "I’m Moebius, dedicated to maintaining clear communication and high standards of quality. I help ensure that our commitment to smooth and consistent airflow reaches every customer.",
     duty: ["Shares updates with the team", "Handles announcements", "Keeps feedback flowing"],
+    refl: "In collaborative work, bottlenecks and delays rarely happen from a lack of effort; they happen when division of labor, formal rules, and chains of command are not supported by clear communication. Breaking down the communication process—from encoding a message and selecting the right channel to decoding, navigating noise, and giving timely feedback—shows just how easily intent can be distorted by poor timing or distractions. I have also seen how informal grapevine networks, such as single-strand, gossip, probability, and cluster chains, naturally emerge to fill the vacuum whenever official updates are delayed or unclear. Consistent integration and open information-sharing ensure that every member stays coordinated and moves toward shared goals rather than working in disconnected silos.",
   },
   {
     n: "Nhed Jhyro Valdez",
@@ -34,6 +37,7 @@ const M = [
     mail: "njvaldez@fluvb.ph",
     bio: " I’m Nhed Jhyro, overseeing the financial side of our business to keep everything organized and sustainable. With proper financial management and teamwork, we can turn our goals into reality and make everyday comfort achievable.",
     duty: ["Manages the budget", "Records expenses", "Prepares reports"],
+    refl: "What stood out to me most is how vital interpersonal trust and psychological safety become when a team is working under tight deadlines. In high-pressure moments, the quality of our communication determines whether stress brings people together or drives them apart. I have observed that teams perform far better when disagreements are treated as healthy discussions of ideas rather than personal attacks or sources of humiliation. When members feel genuinely included, respected, and safe to voice concerns or ask questions without fear of judgment, accountability strengthens naturally. Maintaining open, respectful dialogue allows us to catch mistakes early, manage resources responsibly, and collaborate smoothly toward our goals.",
   },
   {
     n: "Jobelyn Lulu",
@@ -43,6 +47,7 @@ const M = [
     mail: "jlulu@fluvb.ph",
     bio: "I’m Jobelyn, responsible for introducing FLUVB to more people. Through creative promotions and fresh ideas, I help share our mission of bringing better air circulation and comfort to everyone.",
     duty: ["Designs campaigns", "Manages social media", "Builds the brand"],
+    refl: "Stepping back to examine organizations through foundational perspectives—from Weber’s bureaucracy and Taylor’s scientific management to Mayo’s human relations, McGregor’s Theory Y, and Deetz’s critical theory—reveals how structure and authority deeply shape the way people communicate. It is equally insightful to look at organizations through Etzioni’s compliance typology, distinguishing between utilitarian and normative motivations, alongside Blau and Scott’s prime beneficiary framework. Who an organization exists to serve and how it guides its members directly influence whether voices are heard or silenced. Ultimately, every organization is a living system built around shared objectives, and intentional, inclusive communication is what turns passive members into motivated contributors.",
   },
 ];
 const F = [
@@ -123,18 +128,8 @@ const SITE = {
     layout.prepend(nav);
   }
 
-  const setHdr = () =>
-    head &&
-    document.documentElement.style.setProperty(
-      "--hdr",
-      head.offsetHeight + "px",
-    );
-  const setFtr = () =>
-    document.getElementById("site-footer") &&
-    document.documentElement.style.setProperty(
-      "--ftr",
-      document.getElementById("site-footer").offsetHeight + "px",
-    );
+  const setHdr = () => head && document.documentElement.style.setProperty("--hdr", head.offsetHeight + "px");
+  const setFtr = () => document.getElementById("site-footer") && document.documentElement.style.setProperty("--ftr", document.getElementById("site-footer").offsetHeight + "px");
   setHdr();
   addEventListener("resize", () => (setHdr(), setFtr()));
   addEventListener("load", () => (setHdr(), setFtr()));
@@ -176,6 +171,19 @@ function profile(k) {
   } catch (e) {}
 }
 if ($("#profile")) profile(Math.min(M.length - 1, +new URLSearchParams(location.search).get("m") || 0));
+
+/* ===== REFLECTIONS: one profile-style card per member (reflection.html) =====
+   Fill in `refl` on each member in M above. Separate paragraphs with a blank
+   line (\n\n). Leave it empty to show the placeholder text. */
+const reflCard = (m, k) => {
+  const text = m.refl || [`This is a placeholder for ${m.n}'s reflection. Write what you learned about organizational communication from this subject, and what stood out to you most while studying the theories we covered.`, `Describe how Herzberg's Two-Factor Theory showed up in our work as FLUVB, from the motivators that kept the team inspired to the hygiene factors that kept everything running smoothly.`, `Close with how your role shaped your experience, what you would do differently next time, and how you plan to apply these lessons in your future studies and work.`, `End with a closing thought or a piece of advice for anyone studying this subject next.`].join("\n\n");
+  const paras = text
+    .split(/\n\s*\n/)
+    .map((p) => `<p>${p.trim()}</p>`)
+    .join("");
+  return `<article class="profile refl rv" id="reflection-${k}"><div class="info"><h2>${m.n}</h2>${paras}</div><div class="shot"><span class="q">${ic("quote")}</span><div class="frame">${pic(m, k)}</div><div class="band"><b>${m.n}</b><small>${m.r}</small></div></div></article>`;
+};
+if ($("#reflections")) $("#reflections").innerHTML = M.map(reflCard).join("");
 
 document.querySelectorAll("[data-ic2]").forEach((e) => e.insertAdjacentHTML("beforeend", ic("arrow")));
 document.querySelectorAll("[data-ic]").forEach((e) => e.insertAdjacentHTML("afterbegin", ic(e.dataset.ic)));
