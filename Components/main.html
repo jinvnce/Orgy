@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home | Business Organization Name</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="bar"></div>
+    <header class="top">
+      <div class="logo logo-umak">
+        <!-- <img src="../assets/umak-logo.png" alt="UMak logo"> --><span
+          >UMak<br />Logo</span
+        >
+      </div>
+      <div class="title">
+        <h1>Business Organization Name</h1>
+        <p>Organizational Communication - II - ACSAD</p>
+        <ul class="members">
+          <li>Name 1</li>
+          <li>Name 2</li>
+          <li>Name 3</li>
+          <li>Name 4</li>
+          <li>Name 5</li>
+        </ul>
+      </div>
+      <div class="logo logo-own">
+        <!-- <img src="../assets/own-logo.png" alt="Company logo"> --><span
+          >ABCDE</span
+        >
+      </div>
+    </header>
+    <div class="layout">
+      <nav class="side" aria-label="Main">
+        <a
+          class="nav active"
+          aria-current="page"
+          href="main.html"
+          data-ic="home"
+          >Home</a
+        >
+        <a class="nav" href="frameworks.html" data-ic="landmark">Frameworks</a>
+        <a class="nav" href="structure.html" data-ic="network">Structure</a>
+        <a class="nav" href="about.html" data-ic="building">About</a>
+        <a class="nav" href="theory.html" data-ic="book">Theory</a>
+        <a class="nav" href="reflection.html" data-ic="lightbulb">Reflection</a>
+        <a class="nav" href="commitment.html" data-ic="heart">Commitment</a>
+      </nav>
+      <main>
+        <div class="hero">
+          <div class="blob b1"></div>
+          <div class="blob b2"></div>
+          <div class="blob b3"></div>
+          <div class="hero-in">
+            <span class="pill">Organizational Communication · II ACSAD</span>
+            <p class="big">Where every voice in the team is heard</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Meet the
+              people behind the business and watch our story.
+            </p>
+            <div class="cta">
+              <a class="btn gold" href="#team">Meet the team</a
+              ><a class="btn ghost" href="#video">Watch the video</a>
+            </div>
+          </div>
+        </div>
+        <section>
+          <h2 data-ic="star">Explore</h2>
+          <div class="grid">
+            <a class="card rv tile" href="frameworks.html"
+              ><span class="badge" data-ic="landmark"></span>
+              <h3>Frameworks</h3>
+              <p>
+                Eight ways of thinking about communication in organizations.
+              </p>
+              <span class="more" data-ic2="arrow">Open</span></a
+            >
+            <a class="card rv tile" href="structure.html"
+              ><span class="badge" data-ic="network"></span>
+              <h3>Org Structure</h3>
+              <p>One leader and four members. See how we are organized.</p>
+              <span class="more" data-ic2="arrow">Open</span></a
+            >
+            <a class="card rv tile" href="about.html"
+              ><span class="badge" data-ic="building"></span>
+              <h3>About Us</h3>
+              <p>Company info and detailed member profiles.</p>
+              <span class="more" data-ic2="arrow">Open</span></a
+            >
+          </div>
+        </section>
+        <section id="team">
+          <h2 data-ic="users">Meet the Team</h2>
+          <p class="lead-txt">Select a member to read their full profile.</p>
+          <div class="grid team" id="team-grid"></div>
+        </section>
+        <section id="video">
+          <h2 data-ic="play">Company Introduction</h2>
+          <p class="lead-txt">A 1-minute video about who we are.</p>
+          <div class="video">
+            <!-- Your video: <video controls src="../assets/intro.mp4"></video> or <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+            <div>
+              <svg
+                class="i"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="m10 8 6 4-6 4z" />
+              </svg>
+              <p>1-minute video placeholder</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="foot">
+      © Business Organization Name · Organizational Communication – 11 ACSAD
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
