@@ -1043,7 +1043,16 @@ h3,
 :focus-visible {
   outline-color: var(--navy);
 }
-
+/* UMak logo: no dotted border, rounded (circle) shape */
+.top .logo-umak {
+  border: 0;
+  background: transparent;
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+.top .logo-umak img {
+  border-radius: 50% !important;
+}
 .hero {
   background: repeating-linear-gradient(
     135deg,
