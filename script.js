@@ -109,7 +109,7 @@ const SITE = {
      A category with more than one page is { group, icon, items: [[href, label], ...] }
      and becomes a dropdown. Home stays a single link. */
   nav: [
-    ["main.html", "home", "Home"],
+    ["index.html", "home", "Home"],
     {
       group: "Organization",
       icon: "building",
