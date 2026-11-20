@@ -1811,3 +1811,15 @@ main .lead-txt {
     gap: 40px;
   }
 }
+
+/* Core values: three cards per row on desktop, one on phones */
+.values {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 820px;
+  margin: 0 auto;
+}
+@media (max-width: 760px) {
+  .values {
+    grid-template-columns: 1fr;
+  }
+}
